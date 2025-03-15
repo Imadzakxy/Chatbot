@@ -266,14 +266,14 @@ input:focus {
   }
 
   .box{
-    width: 80%;
+    width: 85%;
     height: 45%;
-    font-size: smaller;
   }
 
   .inputbox{
     width: 90%;
     height: 12%;
+    font-size: x-small;
   }
   
   .remember{
@@ -291,20 +291,21 @@ input:focus {
   .check{
     height: 13px;
     width: 13px;
+    margin-bottom: 4px;
   }
 
   .btn{
     width: 70%;
-    height: 37%;
+    height: 40%;
     font-size: small;
   }
 
   .creat{
     font-size: x-small;
   }
-  
+
   .contact{
     font-size: small;
-    width: 278px;
+    width: 290px;
   }
 }
