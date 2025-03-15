@@ -1,5 +1,5 @@
 import './Log_in.css'
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 
 function Log_in() {
     useEffect(() => {

@@ -258,7 +258,7 @@ input:focus {
 @media only screen and (max-width: 600px) {
 
   header{
-    height: 20%;
+    height: 15%;
   }
 
   header h1{
@@ -273,7 +273,7 @@ input:focus {
 
   .inputbox{
     width: 90%;
-    height: 8%;
+    height: 12%;
   }
   
   .remember{
@@ -295,14 +295,14 @@ input:focus {
 
   .btn{
     width: 70%;
-    height: 33%;
+    height: 37%;
     font-size: small;
   }
 
   .creat{
     font-size: x-small;
   }
-
+  
   .contact{
     font-size: small;
     width: 278px;
