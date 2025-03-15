@@ -1,95 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+
 *{
   padding: 0;
   margin: 0;
 }
   
-h1{
-  color: white;
-  font-family: Brush Script MT, Brush Script Std, cursive;
-  text-align: center;
-  font-size: 50px;
-}
-  
-.from-box{
+header{
+  height: 15%;
+  width: 100%;
+
   display: flex;
-  width: 420px;
-  background: transparent;
-}
-  
-.from-box .inputbox{
-  width: 100%;
-  background: transparent;
-}
-  
-.inputbox input{
-  width: 100%;
-  height: 40px;
-  padding: 10px;
-  margin-top: 10px;
-  background: transparent;
-  outline: none;
-  border: 2px solid rgb(255, 255, 255, .2);
-  border-radius: 40px;
-  color: white;
-}
-  
-.inputbox{
-  position: absolute;
-  color: rgb( 255, 255, 255, .2);
-  right: 25%;
-  transform: translateY(23px);
-}
-  
-.remember{
-  display: flex;
-  justify-content: space-between;
-  font-size: 14.5px;
-  margin-top: 15px;
-}
-  
-.remember label input{
-  accent-color: white;
-  width: 10px;
-  margin-right: 3px;
-  transform: translateY(2px);
-}
-  
-.remember label{
-  color: rgb(110, 110, 110);
-  text-align: center;
-  font-size: 12px;
-}
-  
-.remember a{
-  color: rgb(0, 0, 255);
-  font-size: 13px;
-  margin-left: 20px;
-}
-  
-.btn{
-  width: 100%;
-  height: 40px;
-  border: 2px solid rgb(255, 255, 255, .2);
-  border-radius: 40px;
-  color: rgb(0, 217, 255);
-  margin: 20px 0;
-  margin-bottom: 2px;
-  background: transparent;
-  font-weight: 600;
-  cursor: pointer;
-}
-  
-.register{
-  text-align: center;
-  font-size: 14.5px;
-  color: rgb(207, 207, 207);
-  margin: 10px 0;
+  justify-content: center;
+
+  z-index: 1;
 }
 
-.help {
-  margin-top: auto; /* Pour placer le footer en bas de la page */
+header h1{
+  font-family: Brush Script MT, Brush Script Std, cursive;
+  font-size: 50px;
+  color: white;
+
+  display: flex;
   text-align: center;
-  padding: 100px;
+  justify-content: center;
+
+  margin: 0;
 }
+
+.box{
+  height: 440px;
+  width: 520px;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  background-color: rgba(126, 97, 171, 0.5);
+  backdrop-filter: blur(20px);
+  border: 3px solid #cab2fb;
+  border-radius: 20px;
+
+  font-family: 'Zen Dots', sans-serif;
+  font-size: small;
+
+  z-index: 1;
+}
+
+.inputbox{
+  height: 10%;
+  width: 80%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid #cab2fb;
+  border-radius: 14px;
+  background: transparent;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+
+  margin-top: 8%;
+}
+.inputbox input{
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  background: transparent;
+
+  color: #AEAEAE;
   
+  padding: 20px;
+}
+input:focus {
+  outline: none;
+  border-color: initial;
+}
+.user{
+  width: 30px;
+  height: 30px;
+  background: url("/public/account_circle.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px;
+}
+.lock{
+  width: 30px;
+  height: 30px;
+  background: url("/public/lock.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px;
+}
+
+.remember{
+  height: 15%;
+  width: 90%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 14.5px;
+  color: #AEAEAE;
+
+  padding: 20px;
+}
+.rem{
+  height: 100%;
+  width: 35%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+}
+.check{
+  width: 16px;
+  height: 16px;
+
+  appearance: none;
   
+  background-color: #37135a5b;
+  border: 2px solid #cab2fb;
+  border-radius: 4px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.check:checked {
+  background-color: #7E61AB;
+}
+.check:checked::after {
+  content: "✔";
+  color: #36135A;
+  font-size: 12px;
+}
+.forgot{
+  color: #36135A;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+.forgot:hover{
+  text-decoration: underline;
+  color: #AEAEAE;
+}
+
+.login{
+  width: 100%;
+  height: 23%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+} 
+.btn{
+  width: 330px;
+  height: 50px;
+
+  border-radius: 15px;
+  background-color:#36135A;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+
+  color: white;
+  font-weight: 600 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn:hover{
+  background-color: rgb(207, 207, 207);
+  color: #36135A;
+  cursor: pointer;
+}
+
+.register{
+  width: 100%;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  flex-grow: 1;
+}
+.creat{
+  padding: 7px;
+}
+.signup{
+  color: #36135A;
+  cursor: pointer;
+
+  background: transparent;
+  border: none;
+
+  padding: 10px;
+}
+.signup:hover{
+  text-decoration: underline;
+  color: #AEAEAE;
+}
+
+.help{
+  width: 100%;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  flex-grow: 1;
+
+  font-family: 'Zen Dots', sans-serif;
+  color: #cab2fb;
+  z-index: 1;
+}
+.contact{
+  width: 340px;
+  height: 30%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+
+  padding: 10px;
+}
+
+
+.star {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  filter: blur(2px);
+  animation: twinkle 2s infinite alternate;
+}
+.star.small {
+  width: 8px;
+  height: 8px;
+  box-shadow: 0px -6px 10px rgba(255, 255, 255, 0.6), 0px 6px 10px rgba(255, 255, 255, 0.3), -6px 0px 10px rgba(255, 255, 255, 0.4), 6px 0px 10px rgba(255, 255, 255, 0.4);
+}
+.star.tiny {
+  width: 4px;
+  height: 4px;
+  box-shadow: 0px -3px 5px rgba(255, 255, 255, 0.6), 0px 3px 5px rgba(255, 255, 255, 0.3), -3px 0px 5px rgba(255, 255, 255, 0.4), 3px 0px 5px rgba(255, 255, 255, 0.4);
+}
+@keyframes twinkle {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 0.3; }
+}
+
+
+@media only screen and (max-width: 600px) {
+
+  header{
+    height: 20%;
+  }
+
+  header h1{
+    font-size: 40px;
+  }
+
+  .box{
+    width: 80%;
+    height: 45%;
+    font-size: smaller;
+  }
+
+  .inputbox{
+    width: 90%;
+    height: 8%;
+  }
+  
+  .remember{
+    width: 95%;
+    height: 20%;
+
+    font-size: x-small;
+
+    padding: 10px;
+  }
+  .rem{
+    width: 105px;
+    height: 100%;
+  }
+  .check{
+    height: 13px;
+    width: 13px;
+  }
+
+  .btn{
+    width: 70%;
+    height: 33%;
+    font-size: small;
+  }
+
+  .creat{
+    font-size: x-small;
+  }
+
+  .contact{
+    font-size: small;
+    width: 278px;
+  }
+}

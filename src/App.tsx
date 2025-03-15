@@ -14,7 +14,6 @@ function App() {
   //   );
   return (
     <>
-      <h1>Chatbot</h1>
       <Log_in />
     </>
   );

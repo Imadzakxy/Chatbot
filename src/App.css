@@ -3,16 +3,12 @@
   margin: 0;
 }
 
-body{
-  background: linear-gradient(to bottom, #36135A, #5B209A);
+.root{
   height: 100vh;
   width: 100vw;
   display: flex;
-}
-
-h1{
-  color: white;
-  font-family: Brush Script MT, Brush Script Std, cursive;
-  text-align: center;
-  font-size: 50px;
+  align-items: center;
+  flex-direction: column;
+  background: transparent;
+  background: linear-gradient(to bottom, #36135A, #5B209A);
 }
