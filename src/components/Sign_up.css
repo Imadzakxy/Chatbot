@@ -14,7 +14,6 @@ header{
 
   z-index: 1;
 }
-
 header h1{
   font-family: 'Zen Dots', sans-serif;
   font-size: 50px;
@@ -58,8 +57,8 @@ header h1{
   border-radius: 14px;
   background: transparent;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
-
-  margin-top: 25px;
+  
+  margin-top: 12px;
 }
 .inputbox input{
   width: 100%;
@@ -88,6 +87,14 @@ input:focus {
   background-repeat: no-repeat;
   padding: 20px;
 }
+.mail{
+  width: 30px;
+  height: 30px;
+  background: url("/public/mail.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px;
+}
 .lock{
   width: 30px;
   height: 30px;
@@ -97,64 +104,9 @@ input:focus {
   padding: 20px;
 }
 
-.remember{
-  height: 15%;
-  width: 90%;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  font-size: 14.5px;
-  color: #AEAEAE;
-
-  padding: 20px;
-}
-.rem{
-  height: 100%;
-  width: 35%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  justify-content: space-between;
-}
-.check{
-  width: 16px;
-  height: 16px;
-
-  appearance: none;
-  
-  background-color: #37135a5b;
-  border: 2px solid #cab2fb;
-  border-radius: 4px;
-  
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.check:checked {
-  background-color: #7E61AB;
-}
-.check:checked::after {
-  content: "✔";
-  color: #36135A;
-  font-size: 12px;
-}
-.forgot{
-  color: #36135A;
-  cursor: pointer;
-  background: transparent;
-  border: none;
-}
-.forgot:hover{
-  text-decoration: underline;
-  color: #AEAEAE;
-}
-
-.login{
+.singup{
   width: 100%;
-  height: 30%;
+  height: 33%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -193,7 +145,7 @@ input:focus {
 .creat{
   padding: 7px;
 }
-.signup{
+.login{
   color: #36135A;
   cursor: pointer;
 
@@ -202,7 +154,7 @@ input:focus {
 
   padding: 10px;
 }
-.signup:hover{
+.login:hover{
   text-decoration: underline;
   color: #AEAEAE;
 }
@@ -295,7 +247,7 @@ input:focus {
 
   .btn{
     width: 70%;
-    height: 40%;
+    height: 55%;
     font-size: small;
   }
 

@@ -1,20 +1,18 @@
 import './App.css'
-import Log_in from './components/Log_in';
-// import Chat from './Chat';
-
+import { Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
+import Log_in from "./components/Log_in";
+import Sign_up from "./components/Sign_up";
+import Chat from "./components/Chat";
 function App() {
-  // localStorage.getItem('user');
-  // localStorage.getItem('pass');
-  // if(user)
-  //   return (
-  //     <>
-  //       <h1>Chatbot</h1>
-  //       <Chat />
-  //     </>
-  //   );
   return (
     <>
-      <Log_in />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/log_in" element={<Log_in />} />
+        <Route path="/sign_up" element={<Sign_up />} />
+        <Route path="/chat" element={<Chat />} />
+      </Routes>
     </>
   );
 }

@@ -1,8 +1,8 @@
-import './Log_in.css'
+import './Sign_up.css';
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-function Log_in() {
+function Sign_up() {
     const navigate = useNavigate();
     useEffect(() => {
         const starsContainer = document.querySelector(".njmat");
@@ -18,7 +18,7 @@ function Log_in() {
         }
     }, []);
     return (
-        <>  
+        <>
             <div className="njmat">
             </div>
 
@@ -33,24 +33,24 @@ function Log_in() {
                 </div>
 
                 <div className="inputbox">
+                    <input type="Password" placeholder="Phone number or email" required /><div className="mail"></div>
+                </div>
+
+                <div className="inputbox">
                     <input type="Password" placeholder="Password" required /><div className="lock"></div>
                 </div>
 
-                <div className="remember">
-                    <span className="rem">
-                        <input type="checkbox" className="check"/>
-                        Remember me
-                    </span>
-                    <button className="forgot">Forgot password!</button>
+                <div className="inputbox">
+                    <input type="Password" placeholder="corfirm Password" required /><div className="lock"></div>
                 </div>
 
-                <div className="login">
-                    <button type="submit" className="btn"onClick={() => navigate("/chat")}>log in</button> 
+                <div className="singup">
+                    <button type="submit" className="btn" onClick={() => navigate("/chat")}>sign up</button>
                 </div>
 
                 <div className="register">
-                    <span className="creat">Don't have an account ? 
-                        <button className="signup" onClick={() => navigate("/signup")}>sign up!</button>
+                    <span className="creat">You have an account ? 
+                        <button className="login" onClick={() => navigate("/login")}>log in!</button>
                     </span>
                 </div>
             </div>
@@ -60,7 +60,7 @@ function Log_in() {
                     </span>
             </div>
         </>
-    );
+    )
 }
 
-export default Log_in
+export default Sign_up
