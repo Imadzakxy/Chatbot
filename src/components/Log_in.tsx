@@ -1,4 +1,4 @@
-import './Log_in.css'
+import './Log_in.css';
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -8,7 +8,7 @@ function Log_in() {
         const starsContainer = document.querySelector(".njmat");
 
         if (starsContainer) {
-            for (let i = 0; i < 40; i++) { // Génère 50 étoiles
+            for (let i = 0; i < 40; i++) {
                 const star = document.createElement("div");
                 star.className = `star ${Math.random() > 0.7 ? "small" : "tiny"}`;
                 star.style.left = Math.random() * 98 + "vw"; 
@@ -45,9 +45,9 @@ function Log_in() {
                 </div>
 
                 <div className="login">
-                    <button type="submit" className="btn"onClick={() => navigate("/chat")}>log in</button> 
+                    <button type="submit" className="btn" onClick={() => navigate("/chat")}>log in</button> 
                 </div>
-
+                
                 <div className="register">
                     <span className="creat">Don't have an account ? 
                         <button className="signup" onClick={() => navigate("/signup")}>sign up!</button>

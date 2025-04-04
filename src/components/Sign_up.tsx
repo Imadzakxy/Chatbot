@@ -8,7 +8,7 @@ function Sign_up() {
         const starsContainer = document.querySelector(".njmat");
 
         if (starsContainer) {
-            for (let i = 0; i < 40; i++) { // Génère 50 étoiles
+            for (let i = 0; i < 40; i++) { 
                 const star = document.createElement("div");
                 star.className = `star ${Math.random() > 0.7 ? "small" : "tiny"}`;
                 star.style.left = Math.random() * 98 + "vw"; 
