@@ -50,7 +50,7 @@ function Sign_up() {
 
                 <div className="register">
                     <span className="creat">You have an account ? 
-                        <button className="login" onClick={() => navigate("/log_in")}>log in!</button>
+                        <button className="log_in" onClick={() => navigate("/log_in")}>log in!</button>
                     </span>
                 </div>
             </div>

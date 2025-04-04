@@ -145,7 +145,7 @@ input:focus {
 .creat{
   padding: 7px;
 }
-.login{
+.log_in{
   color: #36135A;
   cursor: pointer;
 
@@ -154,7 +154,7 @@ input:focus {
 
   padding: 10px;
 }
-.login:hover{
+.log_in:hover{
   text-decoration: underline;
   color: #AEAEAE;
 }

@@ -27,13 +27,14 @@ function Log_in() {
             </header>
             
             <div className="box">
-
-                <div className="inputbox">
-                    <input type="Username" placeholder="Username" required /><div className="user"></div>
-                </div>
-
-                <div className="inputbox">
-                    <input type="Password" placeholder="Password" required /><div className="lock"></div>
+                
+                <div className='inputs'>
+                    <div className="inputbox_login">
+                        <input type="Username" placeholder="Username" required /><div className="user"></div>
+                    </div>
+                    <div className="inputbox_login">
+                        <input type="Password" placeholder="Password" required /><div className="lock"></div>
+                    </div>
                 </div>
 
                 <div className="remember">
