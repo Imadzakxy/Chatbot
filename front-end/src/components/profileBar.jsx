@@ -28,11 +28,10 @@ const ProfileBar = ({ displayProfileList, setDisplayProfileList }) => {
     checkAuth();
     window.addEventListener('storage', checkAuth);
     return () => window.removeEventListener('storage', checkAuth);
-  }, []);
+  }, [location]);
 
   const handleLogout = async () => {
     try {
-      // Try backend logout first if token exists
       if (userData?.token) {
         const response = await fetch('http://localhost:3000/auth/logout', {
           method: 'POST',
@@ -49,7 +48,6 @@ const ProfileBar = ({ displayProfileList, setDisplayProfileList }) => {
         }
       }
 
-      // Fallback to frontend logout in any case
       localStorage.removeItem('user');
       setUserData(null);
       setIsAuthenticated(false);

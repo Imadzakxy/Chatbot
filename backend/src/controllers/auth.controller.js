@@ -29,17 +29,17 @@ export const registerController = async (request, response) => {
       password: await bcrypt.hash(password, 10),
     }).save();
 
-    await client.send({
-      from: {
-        email: process.env.MAIL_TRAP_EMAIL_SENDER,
-        name: "ChatBot",
-      },
-      to: [{ email: "chatbotusthb2005@gmail.com" }],
-      template_uuid: process.env.TEMPLATE_UUID,
-      template_variables: {
-        username: createdUser.username,
-      },
-    });
+    // await client.send({
+    //   from: {
+    //     email: process.env.MAIL_TRAP_EMAIL_SENDER,
+    //     name: "ChatBot",
+    //   },
+    //   to: [{ email: "chatbotusthb2005@gmail.com" }],
+    //   template_uuid: process.env.TEMPLATE_UUID,
+    //   template_variables: {
+    //     username: createdUser.username,
+    //   },
+    // });
 
     return response.status(201).json({ msg: "User Created Successfully" });
   } catch (error) {
@@ -87,7 +87,7 @@ export const loginController = async (request, response) => {
 
     await user.save();
 
-    return response.status(200).json({ msg: "Login successful" });
+    return response.status(200).json({ msg: "Login successful", username: user.username });
   } catch (error) {
     console.log(error);
     return response

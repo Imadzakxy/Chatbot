@@ -13,6 +13,7 @@ function Sign_up() {
   const [error, setError] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
+  // Check authentication status
   useEffect(() => {
     const checkAuth = () => {
       const storedUser = localStorage.getItem('user');
@@ -26,6 +27,14 @@ function Sign_up() {
       }
     };
     checkAuth();
+  }, []);
+
+  // Load image from localStorage on component mount
+  useEffect(() => {
+    const storedImage = localStorage.getItem("image");
+    if (storedImage) {
+      setImagePreview(storedImage);
+    }
   }, []);
 
   if (isAuthenticated) {
@@ -55,14 +64,6 @@ function Sign_up() {
       reader.readAsDataURL(file);
     }
   };
-
-  // Load image from localStorage on component mount
-  useEffect(() => {
-    const storedImage = localStorage.getItem("image");
-    if (storedImage) {
-      setImagePreview(storedImage);
-    }
-  }, []);
 
   const isValidEmail = (email) => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -112,44 +113,13 @@ function Sign_up() {
 
       if (response.status === 201) {
         // Store user data in localStorage
-        const userData = {
-          username: username,
-          email: email,
-          token: response.data.token,
-          isAuthenticated: true,
-          profilePicture: imagePreview || null
-        };
-        localStorage.setItem("user", JSON.stringify(userData));
-        navigate("/chatpage");
+     
+        navigate("/login");
         window.location.reload();
       }
     } catch (error) {
       // If backend fails, fall back to frontend registration
-      if (error.code === 'ERR_NETWORK' || error.response?.status !== 201) {
-        console.log("Backend unavailable, falling back to frontend registration");
-        
-        // Frontend registration logic
-        localStorage.removeItem("username");
-        localStorage.removeItem("email");
-        localStorage.removeItem("password");
-        
-        localStorage.setItem("username", username);
-        localStorage.setItem("email", email);
-        localStorage.setItem("password", password);
-
-        const userData = {
-          username: username,
-          email: email,
-          isAuthenticated: true,
-          profilePicture: imagePreview || null
-        };
-        localStorage.setItem("user", JSON.stringify(userData));
-        
-        navigate("/chatpage");
-      } else {
-        setError(error.response?.data?.msg || "Registration failed. Please try again.");
-      }
-      console.log("Error details:", error.response?.data?.msg);
+      setError(error.response.data.msg)
     }
   };
 

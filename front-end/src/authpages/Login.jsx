@@ -51,65 +51,31 @@ function Log_in() {
     }
 
     try {
-      // Try backend authentication first
       const response = await axios.post("http://localhost:3000/auth/login", {
         username,
         password,
       });
 
       if (response.status === 200) {
-        // Store user data in localStorage
         const userData = {
-          username: username,
+          username: response.data.username,
           token: response.data.token,
           isAuthenticated: true
         };
         localStorage.setItem("user", JSON.stringify(userData));
-        
-        // If remember me is checked, store username
         if (isRememberMe) {
           localStorage.setItem("rememberedUsername", username);
         }
         navigate("/chatpage");
-        window.location.reload();
       }
     } catch (error) {
-      // If backend fails, fall back to frontend authentication
-      if (error.code === 'ERR_NETWORK' || error.response?.status !== 200) {
-        console.log("Backend unavailable, falling back to frontend auth");
-        
-        // Frontend authentication logic
-        const validUsername = localStorage.getItem("username");
-        const validEmail = localStorage.getItem("email");
-        const validPassword = localStorage.getItem("password");
-
-        const isValid =
-          (username === validUsername || username === validEmail) &&
-          password === validPassword;
-
-        if (isValid) {
-          const userData = {
-            username: username,
-            isAuthenticated: true
-          };
-          localStorage.setItem("user", JSON.stringify(userData));
-          if (isRememberMe) {
-            localStorage.setItem("rememberedUsername", username);
-          }
-          navigate("/chatpage");
-        } else {
-          setError(error.response?.data?.msg || "Login failed. Please try again.");
-        }
-      } else {
-        setError(error.response?.data?.msg || "Login failed. Please try again.");
-      }
+      setError(error.response?.data?.msg || "Login failed. Please try again.");
       console.log("Error details:", error.response?.data?.msg);
     }
   };
 
   return (
     <>
-      {/* Conteneur principal */}
       <form
         onSubmit={handleLogin}
         className="box flex flex-col items-center bg-[rgba(126,97,171,0.25)] bg-transparentS border-[3px] border-[var(--color-3)] rounded-[20px] text-sm z-10 mx-auto mt-4"
@@ -123,7 +89,6 @@ function Log_in() {
         {error && (
           <div className="text-red-500 mt-2 text-center w-[80%]">{error}</div>
         )}
-        {/* Inputs */}
         <div
           className="inputs w-full flex flex-col font-[ZenDots] items-center justify-center"
           style={{ height: "40%" }}
@@ -164,7 +129,6 @@ function Log_in() {
           </div>
         </div>
 
-        {/* Section "Remember me" et bouton "Forgot password" */}
         <div
           className="remember w-full flex items-center font-[ZenDots] justify-between text-[14.5px] text-[#AEAEAE] p-5"
           style={{ height: "10%" }}
@@ -193,7 +157,6 @@ function Log_in() {
           </button>
         </div>
 
-        {/* Bouton de login */}
         <div
           className="login w-full flex items-center justify-center"
           style={{ height: "30%" }}
@@ -207,7 +170,6 @@ function Log_in() {
           </button>
         </div>
 
-        {/* Section register */}
         <div
           className="register w-full flex items-end justify-center text-[#AEAEAE] font-[ZenDots] flex-grow"
           style={{ height: "10%" }}
@@ -224,7 +186,6 @@ function Log_in() {
         </div>
       </form>
 
-      {/* Section help */}
       <div className="help w-full flex items-center justify-center font-[ZenDots] text-[#AEAEAE] z-10 fixed bottom-0 p-4">
         <span className="contact flex items-center justify-center w-full text-center">
           If you have a problem,
