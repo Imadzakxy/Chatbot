@@ -1,0 +1,14 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+.root{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: transparent;
+  background: linear-gradient(to bottom, #36135A, #5B209A);
+}
